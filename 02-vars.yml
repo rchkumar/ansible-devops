@@ -2,7 +2,7 @@
   hosts: all
   vars:
    URL1: play.google.com   # play level vairable
-  vars_file:
+  vars_files:
     - vars.yaml
   tasks:
     - name: Print a Vairable from file
