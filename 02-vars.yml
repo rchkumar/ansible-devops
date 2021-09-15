@@ -31,3 +31,12 @@
     - name: Print fact vairable
       debug: 
         msg: OS = {{ansible_distribution}}
+    - name: Run a Shell command and store output
+      shell: uptime
+      register: out
+    - name: print uptime output
+      debug:
+        msg:  "{{out}}"
+      
+      # in ansible if value starts with a vairable then it has be double quoted.
+      
