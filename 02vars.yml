@@ -1,8 +1,0 @@
-- name: Demo on Vairables
-  hosts: all
-  vars:
-   URL: google.com
-  tasks:
-    - name: Print a Vairable
-      debug:
-        msg: URL = {{URL}}
