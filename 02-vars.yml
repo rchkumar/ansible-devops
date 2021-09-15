@@ -19,3 +19,6 @@
     - name: Print variable from host file
       debug: 
         msg: URL = {{URL4}}
+    - name: Print Variable from CLI
+      debug:
+        msg: URL = {{URL5}}
