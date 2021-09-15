@@ -34,9 +34,17 @@
     - name: Run a Shell command and store output
       shell: uptime
       register: out
+      # out is user defined variable and variable name is our choice 
     - name: print uptime output
       debug:
         msg:  "{{out.stdout}}"
       
       # in ansible if value starts with a vairable then it has be double quoted.
+      
+    - name: Declare a variable / fact
+      set_fact:
+        OUTPUT: "{{out.stdout}}""
+    - name: print output
+      debug:
+        msg: "{{OUTPUT}}"
       
