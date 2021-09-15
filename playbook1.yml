@@ -5,3 +5,5 @@
   tasks:
     - debug:
         msg: Hello World
+  roles:
+    - sample
