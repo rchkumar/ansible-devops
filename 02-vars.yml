@@ -38,7 +38,6 @@
     - name: print uptime output
       debug:
         msg:  "{{out.stdout}}"
-      
       # in ansible if value starts with a vairable then it has be double quoted.
       
     - name: Declare a variable / fact
