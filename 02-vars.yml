@@ -20,11 +20,11 @@
     - name: Print variable from host file
       debug: 
         msg: URL = {{URL4}}
-    - name: Print Variable from CLI
-      debug:
-        msg: URL = {{URL5}}
+ #   - name: Print Variable from CLI
+ #     debug:
+ #       msg: URL = {{URL5}}
     - name: Show variable precendence
       vars:
         URL: tasks.google.com
       debug:
-       msg: URL = {{URL}}
+        msg: URL = {{URL}}
