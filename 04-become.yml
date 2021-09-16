@@ -6,4 +6,4 @@
      register: out
    - name: Print
      debug:
-       msg: "{{out}}""
+       msg: "{{out}}"
