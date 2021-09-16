@@ -47,4 +47,4 @@
  #     debug:
   #      msg: "{{OUTPUT}}"
   roles:    
-   - sample-roles/demo
+   - demo
