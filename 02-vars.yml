@@ -42,7 +42,9 @@
     - name: Declare a variable/fact
       set_fact:
         OUTPUT: "{{out.stdout}}"
-
-    - name: Print OUTPUT
+   
+ - name: Print OUTPUT
       debug:
         msg: "{{OUTPUT}}"
+  roles:    
+   - demo
