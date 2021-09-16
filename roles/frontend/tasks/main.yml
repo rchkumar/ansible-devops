@@ -2,3 +2,10 @@
   yum:
     name: httpd
     state: present
+    
+
+- name: Download Frontend Archive
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
