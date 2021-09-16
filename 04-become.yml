@@ -5,6 +5,10 @@
    - name: Get ID of the user
      shell: id
      register: out
+     become: yes
    - name: Print
      debug:
        msg: "{{out}}"
+       
+       # become can be used on task level also
+       # play level become will run all the tasks as root user, however task level will only run that task
