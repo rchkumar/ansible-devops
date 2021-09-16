@@ -43,8 +43,8 @@
       set_fact:
         OUTPUT: "{{out.stdout}}"
    
- - name: Print OUTPUT
-      debug:
-        msg: "{{OUTPUT}}"
+# - name: Print OUTPUT
+ #     debug:
+  #      msg: "{{OUTPUT}}"
   roles:    
    - demo
