@@ -11,7 +11,7 @@
 - name: Roboshop Project Setup - Catalouge
   hosts: CATALOGUE
   roles:
-    - catalouge
+    - catalogue
     
 - name: Roboshop Project Setup - redis
   hosts: REDIS
