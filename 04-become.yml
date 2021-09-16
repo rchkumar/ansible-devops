@@ -1,5 +1,6 @@
 - name: Demo on Become sudo
   hosts: all
+  become: yes
   tasks:
    - name: Get ID of the user
      shell: id
