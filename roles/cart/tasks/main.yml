@@ -6,7 +6,6 @@
      - make
      - gcc-c++
     state: present
-    
 - name: Create Roboshop User
   user:
     name: roboshop
