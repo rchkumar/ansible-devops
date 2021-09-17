@@ -5,5 +5,5 @@
  
 - name: Install MongoDB
   yum:
-    name: mongodb-org
+    name: mongodb
     state: present
