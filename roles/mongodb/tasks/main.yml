@@ -3,3 +3,8 @@
    src: mongodb.repo
    dest: /etc/yum.repos.d/mongodb.repo
  
+- name: Update MongoDB Listen Address
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
