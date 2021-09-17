@@ -36,4 +36,17 @@
   become_user: roboshop
     
     
+- name: setup catalogue service file
+  copy:
+   src: systemd.service
+   dest: /etc/systemd/system/catalogue.service
    
+   
+- name: start catalogue service
+  systemd:
+    name: catalogue
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+    
+    
