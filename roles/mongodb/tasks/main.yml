@@ -1,8 +1,8 @@
 - name: Setup MongoDB repo
   copy:
-   src: mongodb.repo
-   dest: /etc/yum.repos.d/mongodb.repo
- 
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
 - name: Install MongoDB
   yum:
     name: mongodb-org
@@ -14,27 +14,28 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: Start MondoDB Service
-  systemd: 
+- name: Start MongoDB Service
+  systemd:
     name: mongod
     state: started
     enabled: yes
 
-
-- name: Download MongoDB DB Schema
+- name: Download MongoDB Schema
   ansible.builtin.unarchive:
     src: "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
     dest: /tmp
     remote_src: yes
 
-- name: Load schema - catalogue
+- name: Load Schema - Catalogue
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/catalogue.js"
     idempotent: yes
 
-
-- name: Load schema - Users
+- name: Load Schema - Users
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/users.js"
     idempotent: yes
-    
+
+
+
+
