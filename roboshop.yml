@@ -36,7 +36,7 @@
     
 - name: Roboshop Project Setup - Cart
   hosts: CART
-  tags: CART
+  tags: cart
   become: yes
   roles:
     - cart
