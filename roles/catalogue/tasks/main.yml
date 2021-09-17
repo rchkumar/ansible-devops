@@ -35,7 +35,6 @@
     path: /home/roboshop/catalogue
   become_user: roboshop
     
-    
 - name: setup catalogue service file
   copy:
    src: systemd.service
