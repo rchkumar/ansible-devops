@@ -1,0 +1,51 @@
+
+- name: Install NodeJS
+  yum:
+    name:
+     - nodejs
+     - make
+     - gcc-c++
+    state: present
+    
+- name: Create Roboshop User
+  user:
+    name: roboshop
+
+- name: Download User App Archive
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/user/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
+    
+- name: Remove old content
+  ansible.builtin.file:
+    path: /home/roboshop/user
+    state: absent
+    
+- name: Copy Extracted Content to User Path
+  ansible.builtin.copy:
+    src: /tmp/user-main/
+    dest: /home/roboshop/user/
+    remote_src: yes
+    owner: roboshop
+    group: roboshop
+
+- name: Install the NodeJS Dependencies
+  community.general.npm:
+    path: /home/roboshop/user
+  become_user: roboshop
+    
+- name: setup user service file
+  copy:
+   src: systemd.service
+   dest: /etc/systemd/system/user.service
+   
+   
+- name: star user service
+  systemd:
+    name: user
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+    
+    
