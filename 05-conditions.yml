@@ -21,13 +21,15 @@
       debug:
        msg: NUM Con 1
       when: NUM <= 5
+      
     - name: if Bool1 is true
       debug:
         msg: bool 1 is true
-      when: BOOL1
+      when: BOOL1 | bool
       
       
       
       # Difference between number and string is, strings are quoted and numbers are not .
       # Here vairable would be starting value and it should not bbe quoted.
+      # Latest version of ansible suggest ed using boolean with " |bool"
       
