@@ -2,13 +2,43 @@
   copy:
    src: mysql.repo
    dest: /etc/yum.repos.d/mysql
+   
+- name: Remove Maria DB Lib Packages
+  yum:
+   name: mariadb-libs
+   state: absent
+   
+- name: Remove MariaDB- Libs Packages
+  yum:
+   name: mariadb-libs
+   state: absent
+   
+- name: Install my sql server
+  yum: 
+    name: mysql-community-server
+    state: present
+   
+
+- name: start mysql service
+  systemd:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name: Grab Default Password
+  shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
+  register: default_pass
+  
+  
+- name: Reset SQL File
+  copy:
+   src: reset.sqsl
+   dest: /tmp/reset.sql
 
 
 
-
-
-
-
+- name: Reset MySQL password
+  shell: mysql --connect-expired-password -u root -p "${DEFAULT_PASSWORD}" </tmp/reset.sql
 
 
 
