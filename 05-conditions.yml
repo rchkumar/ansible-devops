@@ -28,6 +28,29 @@
       when: BOOL1 | bool
       
       
+    - name: Multipile statements ,OR
+      debug:
+       msg: either or statements
+      when: NUM >= 5 or BOOL1 | bool
+       
+    
+    - name: Multipile statements ,AND
+      debug:
+       msg: AND Statement
+      when: NUM >= 5 and BOOL1 | bool
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       # Difference between number and string is, strings are quoted and numbers are not .
       # Here vairable would be starting value and it should not bbe quoted.
