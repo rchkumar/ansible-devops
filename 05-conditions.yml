@@ -4,8 +4,10 @@
     - name: CentOS
       debug:
        msg: CentOS
+      when: OS == "centos"
     - name:
       debug:
        msg: Ubuntu
+      when: OS == "ubuntu"
        
     
