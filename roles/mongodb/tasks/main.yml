@@ -1,13 +1,13 @@
 - name: Setup MongoDB repo
   copy:
-   src: mongodb.repo
-   dest: /etc/yum.repos.d/mongodb.repo
- 
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
 - name: Install MongoDB
   yum:
     name: mongodb-org
     state: present
-    
+
 - name: Update MongoDB Listen Address
   ansible.builtin.replace:
     path: /etc/mongod.conf
@@ -25,13 +25,16 @@
     src: "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
     dest: /tmp
     remote_src: yes
-    
-- name: Load Schema - Catalogue
-  community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/catalogue.js"
-    idempotent: yes
 
-- name: Load Schema - Users
+- name: Load Schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/users.js"
+    file: "/tmp/mongodb-main/{{item}}.js"
     idempotent: yes
+  loop:
+    - catalogue
+    - users
+
+
+
+
+
