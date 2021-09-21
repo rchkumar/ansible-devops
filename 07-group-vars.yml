@@ -1,0 +1,7 @@
+- name: Test on Group Vairables
+  hosts:: sample
+  tasks:
+    - name: Demo on Groups
+      debug:
+        msg: hello , {{URL}}
+        
