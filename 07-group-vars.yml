@@ -1,5 +1,5 @@
 - name: Test on Group Vairables
-  hosts:: sample
+  hosts:: all
   tasks:
     - name: Demo on Groups
       debug:
