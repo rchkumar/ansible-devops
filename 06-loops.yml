@@ -3,13 +3,13 @@
   tasks:
    - name: print
      debug:
-      msg: Hello, {{item}}
+        msg: Hello, {{item}}
      loop:
-       - John
-       - Ram
+        - John
+        - Ram
    - name: Print Loop from the map
      debug: 
-       msg: Hello {{item.name}} course is {{item.course}}
+        msg: Hello {{item.name}} course is {{item.course}}
      loop:
        - { name: John , course: aws }
        - { name: Ram ,  course: DevOps }
