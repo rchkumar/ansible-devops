@@ -7,4 +7,9 @@
      loop:
        - John
        - Ram
-       
+   - name: Print Loop from the map
+     debug: 
+       msg: Hello {{item.name}} course is {{item.course}}
+     loop:
+       - { name: John , course: aws }
+       - { name: Ram ,  course: DevOps }
