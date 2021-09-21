@@ -1,0 +1,10 @@
+- name: loops
+  hosts: localhost
+  tasks:
+   - name: print
+     debug:
+      msg: Hello, {{item}}
+     loop:
+       - John
+       - Ram
+       
