@@ -1,7 +1,6 @@
-- name: Test on Group Vairables
-  hosts:: all
+- name: Test on Group vars
+  hosts: sample
   tasks:
-    - name: Demo on Groups
+    - name: Demo on groups
       debug:
-        msg: hello , {{URL}}
-        
+        msg: Hello, {{URL}}
