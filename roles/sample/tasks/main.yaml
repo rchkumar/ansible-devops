@@ -1,6 +1,12 @@
-- name: Hello from Role
+- name: Hello from ROle
   debug:
-   msg: Hell from Role
+    msg: Hello from ROle
+
 - name: Print URL
   debug:
-   msg: URL = {{URL7}}
+    msg: URL = {{URL7}}
+
+- name: Copy hosts file
+  template:
+    src: hosts.txt
+    dest: /tmp/hosts.txt
