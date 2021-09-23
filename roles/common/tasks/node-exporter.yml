@@ -1,4 +1,9 @@
-- name: Node Exporter
+- name: Create Node Exporter
+  file:
+   name: /opt/node_exporter
+   state: directory
+
+- name: Download Node Exporter
   unarchive:
     src: "https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz"
     dest: /opt/node_exporter
