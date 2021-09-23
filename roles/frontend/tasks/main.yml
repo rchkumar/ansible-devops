@@ -33,3 +33,9 @@
     name: nginx
     state: started
     enabled: yes
+  
+
+- name: Include Node_exporter
+  include_role:
+    name: common
+    tasks_from:  node-exporter
