@@ -1,0 +1,11 @@
+groups:
+  - name: HardwareResources
+    rules:
+      - alert: HighCPU
+        expr: cpu_usage_in_percentage > 90
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "HighCPU on {%raw%}{{ $labels.tagName }}{%endraw%}\nEnv: DEV"
+
